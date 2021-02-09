@@ -1,14 +1,26 @@
 <?php SESSION_start() ?>
 <?php require("view/header.php");
 require("controllers/flux_controllers.php");
-$url = "https://www.01net.com/rss/actualites/produits/";
-$_SESSION['nbreacticlechoisi'] = 20;
-getArticles($url, $_SESSION['nbreacticlechoisi']);
+if(isset($_COOKIE[''])){
+  $_SESSION['nbreacticlechoisi']=$_COOKIE['nbre_art'];
+  
+getArticles($_COOKIE['url'], $_SESSION['nbreacticlechoisi'] );
+var_dump($_COOKIE['url']);
+}
+else
+{
+  $url="https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/";
+  $_SESSION['nbreacticlechoisi']=29;
+  getArticles($url, $_SESSION['nbreacticlechoisi']);
+ 
+}
+
 $idmodal = 0;
 ?>
 <div class="ndContent">
   <div class="ndContCard">
-    <?php for ($counter = 0; $counter < $_SESSION['nbreacticlechoisi']; $counter++) {
+    <?php 
+    for ($counter = 0; $counter < $_SESSION['nbreacticlechoisi']; $counter++) {
       $idmodal++;
     ?>
       <div class="ndCard">
