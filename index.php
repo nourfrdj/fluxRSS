@@ -28,7 +28,6 @@ getArticles($url, $_SESSION['nbreacticlechoisi']);
 
 
     <?php
-    require("controllers/flux_controllers.php");
     $url = "https://www.01net.com/rss/actualites/produits/";
     $_SESSION['nbreacticlechoisi'] = 5;
 
@@ -63,7 +62,7 @@ getArticles($url, $_SESSION['nbreacticlechoisi']);
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <?php formatdescription($_SESSION["tableauArticles"][$counter]['desc']); ?>
+                        <?= formatdescription($_SESSION["tableauArticles"][$counter]['desc']); ?>
                     </div>
                     <div class="modal-footer">
                     <button type="boutton" class="btn btn-primary" data-bs-dismiss="modal">lire l'article</button>
