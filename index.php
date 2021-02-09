@@ -2,57 +2,27 @@
 <?php require("view/header.php"); 
 require("controllers/flux_controllers.php");
 $url = "https://www.01net.com/rss/actualites/produits/";
-$_SESSION['nbreacticlechoisi'] = 5;
+$_SESSION['nbreacticlechoisi'] = 20;
 getArticles($url, $_SESSION['nbreacticlechoisi']);
+$idmodal = 0;
 ?>
 <div class="ndContent">
   <div class="ndContCard">
-    <?php for ($counter = 0; $counter < $_SESSION['nbreacticlechoisi']; $counter++) { ?>
+    <?php for ($counter = 0; $counter < $_SESSION['nbreacticlechoisi']; $counter++) { 
+      $idmodal++;
+      ?>
     <div class="ndCard">
-      <div class="circle">
-        <img src="<?= $_SESSION['tableauArticles'][$counter]['img']['url'] ?>" alt="img">
+      <div class="circle" style="background-image:url('<?= $_SESSION['tableauArticles'][$counter]['img'] ?>')">
       </div>
       <div class="content">
         <h4><?= $_SESSION['tableauArticles'][$counter]['title'] ?></h4>
-        <span><?= formatdate($_SESSION["tableauArticles"][$counter]['date']) ?></span>
-        <a href="#">read more</a>
+        <p><?= formatdate($_SESSION["tableauArticles"][$counter]['date']) ?></p>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?= $idmodal ?>">read more</a>
       </div>
     </div>
 
-    <?php
-        }
-          ?>
-
-  </div>
-</div>
-
-
-    <?php
-    $url = "https://www.01net.com/rss/actualites/produits/";
-    $_SESSION['nbreacticlechoisi'] = 5;
-
-
-    getArticles($url, $_SESSION['nbreacticlechoisi']);
-    $idmodal = 0;
-    for ($counter = 0; $counter < $_SESSION['nbreacticlechoisi']; $counter++) {
-        $idmodal++;
-    ?>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="<?= $_SESSION['tableauArticles'][$counter]['img']['url'] ?>" alt="img">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $_SESSION['tableauArticles'][$counter]['title'] ?></h5>
-                        <p class="card-text"><small class="text-muted"><?= formatdate($_SESSION["tableauArticles"][$counter]['date']) ?></small></p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<?= $idmodal ?>"> + d'infos</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- la modal pour chaque article-->
-        <div class="modal fade" id="modal<?= $idmodal ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- la modal pour chaque article-->
+    <div class="modal fade" id="modal<?= $idmodal ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -70,9 +40,14 @@ getArticles($url, $_SESSION['nbreacticlechoisi']);
                 </div>
             </div>
         </div>
+
     <?php
-    }
-    ?>
+        }
+          ?>
+
+  </div>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </body>
