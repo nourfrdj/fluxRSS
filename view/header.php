@@ -16,13 +16,13 @@
   <body>
     <div class="ndNav">
             <div class="ndColNav">
-            <a href="index.php"><p>test</p></a>
+            
             </div>
             <div class="ndColNav" id="ndLogo">
-                <a href="index.php"><img  src="../assets/img/.."/></a>
+                <a href="index.php"></a>
             </div>
             <div class="ndColNav" id="ndParam">
-                <a href="param.php"><i class="fa fa-cog"></i></a>
+                <a href="param.php"><img class="ndButtonParam" src="./assets/img/cog-solid.svg" /></a>
             </div>
     </div>
     <div class="entete">

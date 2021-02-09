@@ -13,24 +13,69 @@
      text-align: center;
      justify-content: center;
      align-items: center;
+     margin-top: 10px;
  }
 
  .ndColNav{
     width: 100%;
-    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
  }
 
+
+
  #ndParam{
      display: block;
  }
- #ndParam i{
+ #ndParam .ndButtonParam{
     float: right;
-    margin-top: 37px;
+    width: 40px;
     margin-right: 35px;
+    transition: 0.5s;
 }
+
+#ndParam .ndButtonParam:hover{
+    animation: animateRotateGear 2.5s linear infinite;
+}
+
+
+@keyframes animateRotateGear{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+#ndLogo{
+    width: 350px;
+    height: 160px;
+    background-image: url("../img/logo3.png");
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+#ndLogo:hover{
+    animation: animateLogo 1.5s linear infinite;
+}
+
+@keyframes animateLogo{
+    0%{
+        background-image: url("../img/logo.png");
+    }
+    35%{
+        background-image: url("../img/logo1.png");
+    }
+    70%
+    {
+        background-image: url("../img/logo2.png");
+    }
+    100%{
+        background-image: url("../img/logo3.png");
+    }
+}
+
 
  .ndColNav p{
      padding: 0;
@@ -49,7 +94,7 @@
 
  .slog{
     width: 30%;
-     border-bottom: 5px solid red;
+     border-bottom: 5px solid #a00000;
  }
 
  .ndContent{
@@ -80,12 +125,13 @@
     box-shadow: 0 15px 25px rgba(0,0,0,0.2);
     transition: 0.5s;
     border-radius: 20px;
+    border : 3px solid #a00000;     
 }
 
 .ndContCard:hover .ndCard{
-    filter: blur(20px);
+    filter: blur(2px);
     transform: scale(0.9);
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .ndContCard .ndCard:hover{
@@ -106,7 +152,7 @@
     text-align: center;
     background-position: center;
     background-size: cover;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #a00000;
 }
 
 
@@ -120,16 +166,40 @@
     position: absolute;
     bottom:10px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .ndContCard .ndCard .content a{
     position: relative;
-    display: inline-block;
     padding: 10px 20px;
-    background:#000;
+    background:#a00000;
     color:#fff;
     border-radius: 40px;
     text-decoration: none;
-    margin-top:20px;
 }
 
+.ndClose{
+    width: 100%;
+    display: block;
+}
+
+
+.ndImgClose{
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.ndPModal{
+    font-size : 1.5rem;
+}
+
+.ndButtonArticle{
+    position: relative;
+    padding: 10px 20px;
+    background:#a00000;
+    color:#fff;
+    border-radius: 40px;
+    text-decoration: none;
+}

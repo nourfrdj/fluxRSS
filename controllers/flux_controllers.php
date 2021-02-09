@@ -7,7 +7,7 @@ function GetArticles($url, $nbrechoisi)
     $tableauInfos = null;
     for ($leCompteur = 0; $leCompteur < $nbrechoisi; $leCompteur++) {
         $tableauInfos[$leCompteur]['link'] =  $rss->channel->item[$leCompteur]->link;
-        $tableauInfos[$leCompteur]['title'] =  substr($rss->channel->item[$leCompteur]->title, 0);
+        $tableauInfos[$leCompteur]['title'] =  substr($rss->channel->item[$leCompteur]->title, 0,);
         $tableauInfos[$leCompteur]['desc'] =  $rss->channel->item[$leCompteur]->description;
         $tableauInfos[$leCompteur]['date'] =  $rss->channel->item[$leCompteur]->pubDate;
         $tableauInfos[$leCompteur]['img'] =  $rss->channel->item[$leCompteur]->enclosure;
