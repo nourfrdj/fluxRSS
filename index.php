@@ -1,17 +1,31 @@
 <?php SESSION_start() ?>
+<?php require("view/header.php"); 
+require("controllers/flux_controllers.php");
+$url = "https://www.01net.com/rss/actualites/produits/";
+$_SESSION['nbreacticlechoisi'] = 5;
+getArticles($url, $_SESSION['nbreacticlechoisi']);
+?>
+<div class="ndContent">
+  <div class="ndContCard">
+    <?php for ($counter = 0; $counter < $_SESSION['nbreacticlechoisi']; $counter++) { ?>
+    <div class="ndCard">
+      <div class="circle">
+        <img src="<?= $_SESSION['tableauArticles'][$counter]['img']['url'] ?>" alt="img">
+      </div>
+      <div class="content">
+        <h4><?= $_SESSION['tableauArticles'][$counter]['title'] ?></h4>
+        <span><?= formatdate($_SESSION["tableauArticles"][$counter]['date']) ?></span>
+        <a href="#">read more</a>
+      </div>
+    </div>
 
-<!DOCTYPE html>
-<html lang="en">
+    <?php
+        }
+          ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-</head>
+  </div>
+</div>
 
-<body>
 
     <?php
     require("controllers/flux_controllers.php");
@@ -49,7 +63,7 @@
                         </h5>
                     </div>
                     <div class="modal-body">
-                        <?= $_SESSION["tableauArticles"][$counter]['desc'] ?>
+                        <?php formatdescription($_SESSION["tableauArticles"][$counter]['desc']); ?>
                     </div>
                     <div class="modal-footer">
                     <button type="boutton" class="btn btn-primary" data-bs-dismiss="modal">lire l'article</button>
