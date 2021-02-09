@@ -3,14 +3,14 @@
 // aller chercher le nombre choisis d'articles 
 function GetArticles($url, $nbrechoisi)
 {
-    $rss = simplexml_load_file($url);
+    $rss =  simplexml_load_file($url);
     $tableauInfos = null;
     for ($leCompteur = 0; $leCompteur < $nbrechoisi; $leCompteur++) {
-        $tableauInfos[$leCompteur]['link'] =  $rss->channel->item[$leCompteur]->link;
-        $tableauInfos[$leCompteur]['title'] =  substr($rss->channel->item[$leCompteur]->title, 0,);
-        $tableauInfos[$leCompteur]['desc'] =  $rss->channel->item[$leCompteur]->description;
-        $tableauInfos[$leCompteur]['date'] =  $rss->channel->item[$leCompteur]->pubDate;
-        $tableauInfos[$leCompteur]['img'] =  $rss->channel->item[$leCompteur]->enclosure;
+        $tableauInfos[$leCompteur]['link'] =  (string)$rss->channel->item[$leCompteur]->link;
+        $tableauInfos[$leCompteur]['title'] = (string) $rss->channel->item[$leCompteur]->title;
+        $tableauInfos[$leCompteur]['desc'] = (string) $rss->channel->item[$leCompteur]->description;
+        $tableauInfos[$leCompteur]['date'] = (string) $rss->channel->item[$leCompteur]->pubDate;
+        $tableauInfos[$leCompteur]['img'] =(string) $rss->channel->item[$leCompteur]->enclosure['url'];
     }
     $_SESSION['tableauArticles'] = $tableauInfos;
 }
