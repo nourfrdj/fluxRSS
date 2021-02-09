@@ -20,5 +20,9 @@ function formatdate($date){
     $datefr=utf8_encode(strftime('%A %d %B %Y %I:%M:%S', strtotime($date)));
 return $datefr;
 }
+function formatdescription($description){
+    $rest = explode(".", $description);
+    return $rest[0];
+}
 
 ?>
