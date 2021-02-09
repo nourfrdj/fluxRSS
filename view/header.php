@@ -1,7 +1,6 @@
   <?php if (isset($_POST['save'])) {
     setcookie('theme', $_POST['theme'], time() + 365 * 24 * 3600); //cookie pour 1 an
-    setcookie('nbre_art', $_POST['nbre_art'], time() + 365 * 24 * 3600);
-    setcookie('cathegory', $_POST['cathegory'], time() + 365 * 24 * 3600);
+
     switch ($_POST['cathegory']) {
       case 'cat_app_log':
         setcookie('url', "https://www.01net.com/rss/actualites/applis-logiciels/", time() + 365 * 24 * 3600);
