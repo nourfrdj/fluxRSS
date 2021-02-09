@@ -1,22 +1,34 @@
   <?php if (isset($_POST['save'])) {
+    var_dump($_POST);
     setcookie('theme', $_POST['theme'], time() + 365 * 24 * 3600); //cookie pour 1 an
-
     switch ($_POST['cathegory']) {
       case 'cat_app_log':
         setcookie('url', "https://www.01net.com/rss/actualites/applis-logiciels/", time() + 365 * 24 * 3600);
+        break;
       case 'cat_jeux':
         setcookie('url', "https://www.01net.com/rss/actualites/jeux/", time() + 365 * 24 * 3600);
+        break;
       case 'cat_tech':
         setcookie('url', "https://www.01net.com/rss/actualites/technos/", time() + 365 * 24 * 3600);
+        break;
       case 'cat_security':
         setcookie('url', "https://www.01net.com/rss/actualites/securite/", time() + 365 * 24 * 3600);
+        break;
       case 'cat_product':
         setcookie('url', "https://www.01net.com/rss/actualites/produits/", time() + 365 * 24 * 3600);
+        break;
+      default:
+      setcookie('url', "https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/", time() + 365 * 24 * 3600);
+        
     }
     switch($_POST['nbre_art']){
       case 'nbre_art_6': setcookie('nbre_art',6,time() + 365 * 24 * 3600);
+      break;
       case 'nbre_art_12':setcookie('nbre_art',12,time() + 365 * 24 * 3600);
+      break;
       case 'nbre_art_all':setcookie('nbre_art',29,time() + 365 * 24 * 3600);
+      break;
+      default : setcookie('nbre_art',29,time() + 365 * 24 * 3600);
     }
   }
   ?>
@@ -51,7 +63,7 @@
     <div class="entete">
       <div class="slog">
         <h1>LogOnHand</h1>
-        <p>Toute l'actualité dans le creux de votre main</p>
+        <p id="ndCaractAnime"></p>
       </div>
     </div>
     <div id="idmodalparametre" class="modal" tabindex="-1">
@@ -97,9 +109,9 @@
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
                     <div class=""> <label>Le nombre d'article par page :</label>
-                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) == 'nbre_art_6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['cathegory']) == 'nbre_art_12' ? 'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['cathegory']) == 'nbre_art_all' ? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
+                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value= <?= isset($_COOKIE['nbre_art']) == 'nbre_art_6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value= <?= isset($_COOKIE['nbre_art']) == 'nbre_art_12' ? 'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value= <?= isset($_COOKIE['nbre_art']) == 'nbre_art_all' ? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
                     </div>
                   </div>
                 </div>

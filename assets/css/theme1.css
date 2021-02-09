@@ -17,21 +17,20 @@
  }
 
  .ndColNav{
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
  }
-
-
-
  #ndParam{
-     display: block;
+    position: absolute;
+    top:25px;
+    right: 20px;
  }
+
  #ndParam .ndButtonParam{
-    float: right;
+
+
     width: 40px;
-    margin-right: 35px;
     transition: 0.5s;
 }
 
@@ -48,8 +47,8 @@
     }
 }
 #ndLogo{
-    width: 350px;
-    height: 160px;
+    min-height: 150px;
+    width:150px;
     background-image: url("../img/logo3.png");
     background-position: center;
     background-size: cover;
@@ -202,4 +201,39 @@
     color:#fff;
     border-radius: 40px;
     text-decoration: none;
+}
+
+.ndButtonArticle:hover{
+    color:#fff;
+    transform: scale(1.1);
+}
+.ndFb{
+    position: absolute;
+    top : 50%;
+    left : 5px;
+    transform: translate(0,-50%);
+}
+
+.modal-footer{
+    position: relative;
+    border-top: 1px solid rgba(160,0,0,0.5);
+}
+
+.modal-content{
+    border : 2px solid #a00000;
+    border-radius: 0.8rem;
+}
+
+.modal-header{
+    border-bottom: 1px solid rgba(160,0,0,0.5);
+}
+
+#ndCaractAnime{
+    height:60px;
+    font-size:1.5rem;
+}
+@media (min-width:1245px){
+    #ndCaractAnime{
+        height: 20px;
+    }
 }
