@@ -17,7 +17,7 @@ $_SESSION['tableauArticles']=$tableauInfos;
 }
 function formatdate($date){
     setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-    $datefr=utf8_encode(strftime('%A %d %B %Y %I:%M:%S', strtotime($date)));
+    $datefr=utf8_encode(strftime('%A %d %B %Y', strtotime($date)));
 return $datefr;
 }
 
