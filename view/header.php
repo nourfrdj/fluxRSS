@@ -19,9 +19,6 @@
 
   <body>
     <div class="ndNav">
-            <div class="ndColNav">
-            
-            </div>
             <div class="ndColNav" id="ndLogo">
                 <a href="index.php"></a>
             </div>
@@ -32,7 +29,7 @@
     <div class="entete">
       <div class="slog">
         <h1>LogOnHand</h1>
-        <p>Toute l'actualité dans le creux de votre main</p>
+        <p id="ndCaractAnime" style="height:20px;font-size:1.5rem;"></p>
       </div>
     </div>
     </div>
