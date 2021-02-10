@@ -8,8 +8,11 @@
      box-sizing: border-box ;
  }
  body{
-    background-color: #333333;
-    color :#fff;
+    background-image:url("../img/bgHello.png");
+    color :#f55cab;
+    background-position: center;
+    background-size:inherit;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
 }
  .ndNav{
      display: flex;
@@ -30,16 +33,15 @@
     position: absolute;
     top:25px;
     right: 20px;
- }
-
- #ndParam .ndButtonParam{
-
+    background-image:url("../img/gearPink.png");
+    background-position: center;
+    background-size: cover;
     width: 40px;
-    transition: 0.5s;
-}
+    height: 40px;
+ }
+ 
 
-
-#ndParam .ndButtonParam:hover{
+#ndParam:hover{
     animation: animateRotateGear 2.5s linear infinite;
 }
 
@@ -54,7 +56,7 @@
 #ndLogo{
     min-height: 150px;
     width:150px;
-    background-image: url("../img/logo3.png");
+    background-image: url("../img/logo3Theme3.png");
     background-position: center;
     background-size: cover;
     transition: 0.5s;
@@ -66,17 +68,17 @@
 
 @keyframes animateLogo{
     0%{
-        background-image: url("../img/logo.png");
+        background-image: url("../img/logoTheme3.png");
     }
     35%{
-        background-image: url("../img/logo1.png");
+        background-image: url("../img/logo1Theme3.png");
     }
     70%
     {
-        background-image: url("../img/logo2.png");
+        background-image: url("../img/logo2Theme3.png");
     }
     100%{
-        background-image: url("../img/logo3.png");
+        background-image: url("../img/logo3Theme3.png");
     }
 }
 
@@ -98,23 +100,15 @@
 
  .slog{
     width: 30%;
-     position: relative;
+    border-bottom: 5px solid #69c6dd;
  }
 
- .slog::before,
-.slog::after{
-    content :'';
-    position : absolute;
-    bottom : 0;
-    left : 0;
-    width : 100%;
-    height: 7%;
-    background: linear-gradient(45deg, #ff0000, blue, green,yellow,#ff0000, blue, green,yellow,#920000);
-    background-size: 500%;
-    z-index: -1;
-    transform: scale(1.03);
-    animation: animate 50s infinite;
-    opacity: 0.5;
+ @media (max-width : 760px){
+    .slog{
+        width: 80%;
+        border-bottom: 5px solid #69c6dd;
+     }
+    
 }
 
 .slog::after{
@@ -151,29 +145,15 @@
     position: relative;
     width: 300px;
     height: 420px;
-    background : #333333;
+    background : #b41f74;
     margin: 20px;
     overflow: hidden;
     border-radius: 20px;
-    border : 3px solid red;     
+    border : 3px solid #69c6dd;     
     z-index:2;
 }
 
-.ndCard::before,
-.ndCard::after{
-    content :'';
-    position : absolute;
-    bottom : 0;
-    left : 0;
-    width : 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #ff0000, blue, green,yellow,#ff0000, blue, green,yellow,#920000);
-    background-size: 500%;
-    z-index: -1;
-    transform: scale(1.03);
-    animation: animate 50s infinite;
-    opacity: 0.5;
-}
+
 
 .ndCard::after{
     filter: blur(20px);
@@ -183,7 +163,7 @@
 .ndContCard:hover .ndCard{
     filter: blur(2px);
     transform: scale(1);
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .ndContCard .ndCard:hover{
@@ -204,7 +184,7 @@
     text-align: center;
     background-position: center;
     background-size: cover;
-    border-bottom: 1px solid #303cc4;
+    border-bottom: 1px solid #69c6dd;   
     z-index:2;
 }
 
@@ -221,14 +201,15 @@
     text-align: center;
     margin-bottom: 20px;
     z-index:2;
-    background : #333333;
+    padding-left:10px;
+    padding-right: 10px;
 }
 
 .ndContCard .ndCard .content a{
     position: relative;
     padding: 10px 20px;
-    background:#303cc4;
-    color:#fff;
+    background:#501215;
+    color:#69c6dd;
     border-radius: 40px;
     text-decoration: none;
 }
@@ -253,14 +234,17 @@
 .ndButtonArticle{
     position: relative;
     padding: 10px 20px;
-    background:#303cc4;
-    color:#fff;
+    background:#501215;
+    color:#69c6dd;
     border-radius: 40px;
     text-decoration: none;
+    outline-style:none;
 }
 
+.ndButtonArticle:active {outline-style:none;}
+
 .ndButtonArticle:hover{
-    color:#fff;
+    color:#69c6dd;
     transform: scale(1.1);
 }
 .ndFb{
@@ -272,13 +256,14 @@
 
 .modal-footer{
     position: relative;
-    border-top: 1px solid rgba(29, 0, 160, 0.5);
+    border-top: 1px solid rgba(3, 149, 194, 0.5);
 }
 
 .modal-content{
-    border : 2px solid #303cc4;
+    border : 2px solid #69c6dd;   
     border-radius: 0.8rem;
-    background-color: #333333;
+    background : #b41f74;
+    height: 100%;
 }
 
 .modal-header{
@@ -299,4 +284,39 @@
     border-radius: 50px;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+
+
+.nav-pills .nav-link.active{
+    background-color: #501215;
+}
+
+a{
+    color:#fff;
+}
+
+a:hover{
+    color:#fff;
+    transform: scale(1.05);
+}
+
+input{
+    border : none;
+}
+
+.ndContentModal{
+    height: 80%;
+    color:#fff;
+}
+
+@media (min-width: 576px){
+    .ndModParam{
+        max-width: 700px;
+        height: 400px;
+    }
+}
+
+.modal-header h5{
+    color: #fff;
 }

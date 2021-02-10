@@ -44,7 +44,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/theme3.css">
+    <link rel="stylesheet" href="./assets/css/<?= $_COOKIE["theme"]; ?>.css">
     <title>Hello, world!</title>
   </head>
 
@@ -57,8 +57,8 @@
       <div class="ndColNav" id="ndLogo">
         <a href="index.php"></a>
       </div>
-      <div class="ndColNav" id="ndParam">
-        <img class=" ndButtonParam" src="./assets/img/cog-solid.svg" data-bs-toggle="modal" data-bs-target="#idmodalparametre"/>
+      <div class="ndColNav" id="ndParam" data-bs-toggle="modal" data-bs-target="#idmodalparametre">
+        
       </div>
     </div>
     <div class="entete">
@@ -69,14 +69,14 @@
     </div>
     <div id="idmodalparametre" class="modal" tabindex="-1">
       <form method="post" action="index.php">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <div class="modal-dialog ndModParam">
+          <div class="modal-content ">
             <div class="modal-header ">
               <h5 class="modal-title ">Parametre</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div class="d-flex align-items-start">
+              <div class="d-flex align-items-start ndContentModal">
                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                   <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Apparence</a>
                   <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">la gestion des flux </a>
@@ -86,12 +86,12 @@
                   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <div>
                       <label for="theme">Choisissez votre Theme : </label>
-                      <p> <input type="radio" id="themeWhite" name="theme" selected value="themeWhite" <?= isset($_COOKIE['theme']) == 'themeWhite' ? 'checked' : '' ?>><label for="themeWhite">Jour</label></p>
+                      <p> <input type="radio" id="themeWhite" name="theme" selected value="theme1" <?= isset($_COOKIE['theme']) == 'theme1' ? 'checked' : '' ?>><label for="themeWhite">Jour</label></p>
                       <p>
-                        <input type="radio" id="themeBlack" name="theme" value="themeBlack" <?= isset($_COOKIE['theme']) == 'themeBlack' ? 'checked' : '' ?>><label for="themeBlack">Nuit</label>
+                        <input type="radio" id="themeBlack" name="theme" value="theme2" <?= isset($_COOKIE['theme']) == 'theme2' ? 'checked' : '' ?>><label for="themeBlack">Nuit</label>
                       </p>
                       <p>
-                        <input type="radio" id="themeRJB" name="theme" value="RJB" <?= isset($_COOKIE['theme']) == 'RJB' ? 'checked' : '' ?>>
+                        <input type="radio" id="themeRJB" name="theme" value="theme3" <?= isset($_COOKIE['theme']) == 'theme3' ? 'checked' : '' ?>>
                         <label for="themeRJB">Technologie</label>
                       </p>
 
@@ -118,8 +118,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" name="save" class="btn btn-primary"onclick="header('Location: index.php " >Enregistrer Vos preferances</button>
+                <input type="submit" name="save" class="ndButtonArticle" value="Enregistrer vos préférences" onclick="header('Location: index.php');" >
               </div>
             </div>
           </div>
