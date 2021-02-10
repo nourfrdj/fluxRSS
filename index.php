@@ -4,7 +4,7 @@ require("view/header.php");
 require("controllers/flux_controllers.php");
 if(!isset($_COOKIE['nbre_art'])&&!isset($_COOKIE['cathegory'])){
   $_COOKIE['nbre_art']=29;
-getArticles("https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/",$_COOKIE['nbre_art']); 
+  getArticles("https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/",$_COOKIE['nbre_art']); 
 }
 else{
   getArticles($_COOKIE['url'],$_COOKIE['nbre_art']); 
@@ -24,7 +24,7 @@ $idmodal = 0;
         <div class="circle" style="background-image:url('<?= $_SESSION['tableauArticles'][$counter]['img'] ?>')">
         </div>
         <div class="content">
-          <h4><?= $_SESSION['tableauArticles'][$counter]['title'] ?></h4>
+          <h5><?= $_SESSION['tableauArticles'][$counter]['title'] ?></h5>
           <p><?= formatdate($_SESSION["tableauArticles"][$counter]['date']) ?></p>
           <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?= $idmodal ?>">+ d'info</a>
         </div>
