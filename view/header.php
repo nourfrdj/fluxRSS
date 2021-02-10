@@ -61,7 +61,7 @@
   </head>
 
   <body>
-
+  <button onclick="topFunction()" id="myBtn" title="Go to top"></button>
     <div class="ndNav">
       <div class="ndColNav">
 
@@ -97,40 +97,40 @@
                 <div class="tab-content" id="v-pills-tabContent">
                   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <div>
-                      <label for="theme">Choisissez votre Theme : </label>
-                      <p> <input  type="radio" id="themeWhite" name="theme"  value="theme1"<?= isset($_COOKIE['theme']) && $_COOKIE["theme"] == "theme1" ? 'checked' : '' ?>  ><label for="themeWhite">Jour</label></p>
+                      <label for="theme"  style="margin-bottom:15px;"><strong>Choisissez votre Theme : </strong></label>
+                      <p> <input  type="radio" id="themeWhite" name="theme"  value="theme1"<?= isset($_COOKIE['theme']) && $_COOKIE["theme"] == "theme1" ? 'checked' : '' ?>  ><label for="themeWhite"><span class="ndSpan"> Jour</span></label></p>
                       <p>
-                        <input type="radio" id="themeBlack" name="theme" value="theme2" <?= isset($_COOKIE['theme']) && $_COOKIE["theme"] == "theme2" ? 'checked' : '' ?>  ><label for="themeBlack">Nuit</label>
+                        <input type="radio" id="themeBlack" name="theme" value="theme2" <?= isset($_COOKIE['theme']) && $_COOKIE["theme"] == "theme2" ? 'checked' : '' ?>  ><label for="themeBlack"><span class="ndSpan">Nuit</span></label>
                       </p>
                       <p>
                         <input type="radio" id="themeRJB" name="theme" value="theme3"<?= isset($_COOKIE['theme']) && $_COOKIE["theme"] == "theme3" ? 'checked' : '' ?>  >
-                        <label for="themeRJB">Girl Power!</label>
+                        <label for="themeRJB"><span class="ndSpan">Girl Power!</span></label>
                       </p>
 
                     </div>
 
                   </div>
                   <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <div class=""> <label>Choisissez la cathegorie que vous voulez suivre :</label>
+                    <div class=""> <label  style="margin-bottom:15px;"><strong>Choisissez la cathegorie que vous voulez suivre :</strong></label>
                       <p> <input type="radio" id="cat_app_log" name="cathegory" value="cat_app_log" checked><label for="cat_app_log">applications et logiciels</label></p>
-                      <p> <input type="radio" id="cat_tech" name="cathegory" value="cat_tech" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_tech" ?'checked' : ''  ?>><label for="cat_tech">Technologie</label></p>
-                      <p> <input type="radio" id="cat_jeux" name="cathegory" value="cat_jeux" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_jeux" ? 'checked' : ''  ?>><label for="cat_jeux">Jeux</label></p>
-                      <p> <input type="radio" id="cat_security" name="cathegory" value="cat_security" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_security" ? 'checked' : '' ?>><label for="cat_security">Securité </label></p>
-                      <p> <input type="radio" id="cat_product" name="cathegory" value="cat_product" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_product" ? 'checked' : '' ?>><label for="cat_product">Produits </label></p>
+                      <p> <input type="radio" id="cat_tech" name="cathegory" value="cat_tech" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_tech" ?'checked' : ''  ?>><label for="cat_tech"><span class="ndSpan">Technologie</span></label></p>
+                      <p> <input type="radio" id="cat_jeux" name="cathegory" value="cat_jeux" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_jeux" ? 'checked' : ''  ?>><label for="cat_jeux"><span class="ndSpan">Jeux</span></label></p>
+                      <p> <input type="radio" id="cat_security" name="cathegory" value="cat_security" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_security" ? 'checked' : '' ?>><label for="cat_security"><span class="ndSpan">Securité</span></label></p>
+                      <p> <input type="radio" id="cat_product" name="cathegory" value="cat_product" <?= isset($_COOKIE['cathegory']) && $_COOKIE["cathegory"] == "cat_product" ? 'checked' : '' ?>><label for="cat_product"><span class="ndSpan">Produits</span></label></p>
                     </div>
                   </div>
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
-                    <div class=""> <label>Le nombre d'article par page :</label>
-                      <p> <input type="radio" id="nbr_art_6" checked name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "6" ? 'checked' : '' ?> ><label for="nbre_art_6">6 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "12" ? 'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "29" ? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
+                    <div class=""> <label  style="margin-bottom:15px;"><strong>Le nombre d'article par page :</strong></label>
+                      <p> <input type="radio" id="nbr_art_6" checked name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "6" ? 'checked' : '' ?> ><label for="nbre_art_6"><span class="ndSpan">6 articles</span></label></p>
+                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "12" ? 'checked' : '' ?>><label for="nbre_art_12"><span class="ndSpan">12 articles</span></label></p>
+                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "29" ? 'checked' : '' ?>><label for="nbre_art_all"><span class="ndSpan">Tous les articles</span></label></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <a href="./controllers/deco.php">Deconnexion</a>
+                <a class="ndADeco" href="./controllers/deco.php">Deconnexion</a>
                 <input type="submit" name="save" class="ndButtonArticle" value="Enregistrer vos préférences" onclick="header('Location: index.php');" >
               </div>
             </div>
