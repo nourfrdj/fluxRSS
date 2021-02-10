@@ -53,7 +53,7 @@
 #ndLogo{
     min-height: 150px;
     width:150px;
-    background-image: url("../img/logo3.png");
+    background-image: url("../img/logo3Theme2.png");
     background-position: center;
     background-size: cover;
     transition: 0.5s;
@@ -65,17 +65,17 @@
 
 @keyframes animateLogo{
     0%{
-        background-image: url("../img/logo.png");
+        background-image: url("../img/logoTheme2.png");
     }
     35%{
-        background-image: url("../img/logo1.png");
+        background-image: url("../img/logo1Theme2.png");
     }
     70%
     {
-        background-image: url("../img/logo2.png");
+        background-image: url("../img/logo2Theme2.png");
     }
     100%{
-        background-image: url("../img/logo3.png");
+        background-image: url("../img/logo3Theme2.png");
     }
 }
 
@@ -288,7 +288,7 @@ input{
 }
 
 
-.modal-footer a{
+.modal-footer .ndADeco{
     position: relative;
     padding: 10px 20px;
     background:rgb(24, 0, 133);
@@ -313,3 +313,29 @@ input{
     }
     
 }
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 9999;
+    font-size: 18px;
+    border: 5px solid #303cc4;
+    outline: none;
+    background-color: #303cc4;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    background-image: url("../img/arrow.png");
+    background-position: center;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height:50px;
+  }
+  
+  #myBtn:hover {
+    background-color: #303cc4;
+  }

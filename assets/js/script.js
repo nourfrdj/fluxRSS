@@ -1,3 +1,5 @@
+
+
 var
   words = ["l'actu dans le creux de votre main"],
   part,
@@ -46,3 +48,4 @@ var wordflick = function(){
 $(document).ready(function(){
   wordflick();
 });
+
