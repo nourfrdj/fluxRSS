@@ -29,6 +29,7 @@
       break;
       default : setcookie('nbre_art',29,time() + 365 * 24 * 3600);
     }
+    header("Location: index.php");
   }
   ?>
   <!doctype html>

@@ -1,6 +1,6 @@
 <?php SESSION_start() ?>
 <?php 
-
+require("view/header.php");
 require("controllers/flux_controllers.php");
 if(isset($_COOKIE)){
   $_SESSION['nbreacticlechoisi']=$_COOKIE['nbre_art'];  
@@ -9,7 +9,7 @@ if(isset($_COOKIE)){
 else{
   
 }
-require("view/header.php");
+
 $idmodal = 0;
 ?>
 <div class="ndContent">
