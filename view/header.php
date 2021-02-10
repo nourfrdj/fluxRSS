@@ -17,23 +17,24 @@
         setcookie('url', "https://www.01net.com/rss/actualites/produits/", time() + 365 * 24 * 3600);
         break;
       default:
-      setcookie('url', "https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/", time() + 365 * 24 * 3600);
-        
+        setcookie('url', "https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/", time() + 365 * 24 * 3600);
     }
-    switch($_POST['nbre_art']){
-      case 'nbre_art_6': setcookie('nbre_art',6,time() + 365 * 24 * 3600);
-      break;
-      case 'nbre_art_12':setcookie('nbre_art',12,time() + 365 * 24 * 3600);
-      break;
-      case 'nbre_art_all':setcookie('nbre_art',29,time() + 365 * 24 * 3600);
-      break;
-      
+    switch ($_POST['nbre_art']) {
+      case 'nbre_art_6':
+        setcookie('nbre_art', 6, time() + 365 * 24 * 3600);
+        break;
+      case 'nbre_art_12':
+        setcookie('nbre_art', 12, time() + 365 * 24 * 3600);
+        break;
+      case 'nbre_art_all':
+        setcookie('nbre_art', 29, time() + 365 * 24 * 3600);
+        break;
     }
+  } elseif ($_COOKIE){
+var_dump('$_COOKIE');
   }
-  else
-  {
-    
-  }
+
+  
   ?>
   <!doctype html>
   <html lang="fr">
@@ -47,11 +48,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/theme1.css">
+    <link rel="stylesheet" href="./assets/css/theme3.css">
     <title>Hello, world!</title>
   </head>
 
   <body>
+
     <div class="ndNav">
       <div class="ndColNav">
 
@@ -60,7 +62,7 @@
         <a href="index.php"></a>
       </div>
       <div class="ndColNav" id="ndParam">
-        <a href="#idmodalparametre" data-bs-toggle="modal" data-bs-target="#idmodalparametre""><img class=" ndButtonParam" src="./assets/img/cog-solid.svg" /></a>
+        <img class=" ndButtonParam" src="./assets/img/cog-solid.svg" data-bs-toggle="modal" data-bs-target="#idmodalparametre" />
       </div>
     </div>
     <div class="entete">
@@ -70,7 +72,7 @@
       </div>
     </div>
     <div id="idmodalparametre" class="modal" tabindex="-1">
-      <form method="post">
+      <form method="post" action="index.php">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header ">
@@ -112,16 +114,16 @@
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
                     <div class=""> <label>Le nombre d'article par page :</label>
-                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value=6 ?><label for="nbre_art_6">6 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value= 12><label for="nbre_art_12">12 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value=29><label for="nbre_art_all">Tous les articles</label></p>
+                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) == '6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) == '12' ? 'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['nbre_art']) == '29' ? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" name="save" value="save" class="btn btn-primary"onclick="header('Location: index.php " >Enregistrer Vos preferances</button>
+                <button type="submit" name="save" value="save" class="btn btn-primary" onclick="header('Location: index.php ">Enregistrer Vos preferances</button>
               </div>
             </div>
           </div>
