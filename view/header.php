@@ -1,39 +1,39 @@
   <?php if (isset($_POST['save'])) {
-    setcookie('theme', $_POST['theme'], time() + 365 * 24 * 3600); //cookie pour 1 an
+    setcookie('theme', $_POST['theme'], time() + 365 * 24 * 3600,"/"); //cookie pour 1 an
     switch ($_POST['cathegory']) {
       case 'cat_app_log':
-        setcookie('url', "https://www.01net.com/rss/actualites/applis-logiciels/", time() + 365 * 24 * 3600);
-        setcookie('cathegory', 'cat_app_log', time() + 365 * 24 * 3600);
+        setcookie('url', "https://www.01net.com/rss/actualites/applis-logiciels/", time() + 365 * 24 * 3600,"/");
+        setcookie('cathegory', 'cat_app_log', time() + 365 * 24 * 3600,"/");
         break;
       case 'cat_jeux':
-        setcookie('cathegory','cat_jeux', time() + 365 * 24 * 3600);
-        setcookie('url', "https://www.01net.com/rss/actualites/jeux/", time() + 365 * 24 * 3600);
+        setcookie('cathegory','cat_jeux', time() + 365 * 24 * 3600,"/");
+        setcookie('url', "https://www.01net.com/rss/actualites/jeux/", time() + 365 * 24 * 3600,"/");
         break;
       case 'cat_tech':
-        setcookie('cathegory', 'cat_tech', time() + 365 * 24 * 3600);
-        setcookie('url', "https://www.01net.com/rss/actualites/technos/", time() + 365 * 24 * 3600);
+        setcookie('cathegory', 'cat_tech', time() + 365 * 24 * 3600,"/");
+        setcookie('url', "https://www.01net.com/rss/actualites/technos/", time() + 365 * 24 * 3600,"/");
         break;
       case 'cat_security':
-        setcookie('cathegory','cat_security', time() + 365 * 24 * 3600);
-        setcookie('url', "https://www.01net.com/rss/actualites/securite/", time() + 365 * 24 * 3600);
+        setcookie('cathegory','cat_security', time() + 365 * 24 * 3600,"/");
+        setcookie('url', "https://www.01net.com/rss/actualites/securite/", time() + 365 * 24 * 3600,"/");
         break;
       case 'cat_product':
-        setcookie('cathegory', 'cat_product', time() + 365 * 24 * 3600);
-        setcookie('url', "https://www.01net.com/rss/actualites/produits/", time() + 365 * 24 * 3600);
+        setcookie('cathegory', 'cat_product', time() + 365 * 24 * 3600,"/");
+        setcookie('url', "https://www.01net.com/rss/actualites/produits/", time() + 365 * 24 * 3600,"/");
         break;
       default:
-        setcookie('url', "https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/", time() + 365 * 24 * 3600);
+        setcookie('url', "https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/", time() + 365 * 24 * 3600,"/");
     
       }
     switch ($_POST['nbre_art']) {
       case 'nbre_art_6':
-        setcookie('nbre_art', 6, time() + 365 * 24 * 3600);
+        setcookie('nbre_art', 6, time() + 365 * 24 * 3600,"/");
         break;
       case 'nbre_art_12':
-        setcookie('nbre_art', 12, time() + 365 * 24 * 3600);
+        setcookie('nbre_art', 12, time() + 365 * 24 * 3600,"/");
         break;
       case 'nbre_art_all':
-        setcookie('nbre_art', 29, time() + 365 * 24 * 3600);
+        setcookie('nbre_art', 29, time() + 365 * 24 * 3600,"/");
         break;
 
     }
@@ -130,6 +130,7 @@
                 </div>
               </div>
               <div class="modal-footer">
+                <a href="./controllers/deco.php">Deconnexion</a>
                 <input type="submit" name="save" class="ndButtonArticle" value="Enregistrer vos préférences" onclick="header('Location: index.php');" >
               </div>
             </div>
