@@ -302,3 +302,15 @@ input{
         height: 400px;
     }
 }
+
+
+.modal-footer a{
+    position: relative;
+    padding: 10px 20px;
+    background:#333333;
+    color:#fff;
+    border-radius: 40px;
+    text-decoration: none;
+    outline-style:none;
+    margin-right: 15px;
+}

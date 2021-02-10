@@ -161,13 +161,11 @@
 
 
 .ndContCard:hover .ndCard{
-    filter: blur(2px);
-    transform: scale(1);
+    transform: scale(0.9);
     opacity: 1;
 }
 
 .ndContCard .ndCard:hover{
-    filter: blur(0px);
     transform: scale(1.1);
     opacity: 1;
 }
@@ -319,4 +317,31 @@ input{
 
 .modal-header h5{
     color: #fff;
+}
+
+
+.modal-footer a{
+    position: relative;
+    padding: 10px 20px;
+    background:#69c6dd;
+    color:#fff ;
+    border-radius: 40px;
+    text-decoration: none;
+    outline-style:none;
+    margin-right: 15px;
+}
+
+@media (min-width:1025px){
+    .ndContCard:hover .ndCard{
+        filter: blur(5px);
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    
+    .ndContCard .ndCard:hover{
+        filter: blur(0px);
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    
 }
