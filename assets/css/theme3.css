@@ -13,6 +13,7 @@
     background-position: center;
     background-size:inherit;
     text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+
 }
  .ndNav{
      display: flex;
@@ -351,7 +352,7 @@ input{
     position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 9999;
+    z-index: 99;
     font-size: 18px;
     border: 5px solid #b41f74;
     outline: none;
