@@ -1,342 +1,346 @@
 .selector-for-some-widget {
-    box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ndNav {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ndColNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#ndParam {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  background-image: url("../img/gearBlack.png");
+  background-position: center;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+#ndParam .ndButtonParam {
+  width: 40px;
+  transition: 0.5s;
+}
+
+#ndParam:hover {
+  animation: animateRotateGear 2.5s linear infinite;
+}
+
+@keyframes animateRotateGear {
+  from {
+    transform: rotate(0deg);
   }
-
- *{
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box ;
- }
-
- 
-
- .ndNav{
-     display: flex;
-     text-align: center;
-     justify-content: center;
-     align-items: center;
-     margin-top: 10px;
- }
-
- .ndColNav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
-    
- #ndParam{
-    position: absolute;
-    top:25px;
-    right: 20px;
-    background-image:url("../img/gearBlack.png");
-    background-position: center;
-    background-size: cover;
-    width: 40px;
-    height: 40px;
- }
- 
-
- #ndParam .ndButtonParam{
-    width: 40px;
-    transition: 0.5s;
+  to {
+    transform: rotate(360deg);
+  }
+}
+#ndLogo {
+  min-height: 150px;
+  width: 150px;
+  background-image: url("../img/logo3.png");
+  background-position: center;
+  background-size: cover;
+  transition: 0.5s;
 }
 
-#ndParam:hover{
-    animation: animateRotateGear 2.5s linear infinite;
+#ndLogo:hover {
+  animation: animateLogo 1.5s linear infinite;
 }
 
-
-@keyframes animateRotateGear{
-    from{
-        transform: rotate(0deg);
-    }to{
-        transform: rotate(360deg);
-    }
-}
-#ndLogo{
-    min-height: 150px;
-    width:150px;
+@keyframes animateLogo {
+  0% {
+    background-image: url("../img/logo.png");
+  }
+  35% {
+    background-image: url("../img/logo1.png");
+  }
+  70% {
+    background-image: url("../img/logo2.png");
+  }
+  100% {
     background-image: url("../img/logo3.png");
-    background-position: center;
-    background-size: cover;
-    transition: 0.5s;
+  }
 }
 
-#ndLogo:hover{
-    animation: animateLogo 1.5s linear infinite;
+.ndColNav p {
+  padding: 0;
+  margin: 0;
 }
 
-@keyframes animateLogo{
-    0%{
-        background-image: url("../img/logo.png");
-    }
-    35%{
-        background-image: url("../img/logo1.png");
-    }
-    70%
-    {
-        background-image: url("../img/logo2.png");
-    }
-    100%{
-        background-image: url("../img/logo3.png");
-    }
+.entete {
+  text-align: center;
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
 }
 
-
- .ndColNav p{
-     padding: 0;
-     margin: 0;
- }
-
- .entete{
-     text-align: center;
-     width: 100%;
-     margin-top : 25px;
-     display: flex;
-     justify-content: center;
- }
-
-
-
- .slog{
-    width: 30%;
-     border-bottom: 5px solid #a00000;
- }
-
-
-@media (max-width : 760px){
-    .slog{
-        width: 80%;
-         border-bottom: 5px solid #a00000;
-     }
-    
-}
- 
- .ndContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-attachment: fixed;
- }
- 
-.ndContCard{
-    position : relative;
-    width: 1150px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
+.slog {
+  width: 30%;
+  border-bottom: 5px solid #a00000;
 }
 
-.ndContCard .ndCard{
-    position: relative;
-    width: 300px;
-    height: 420px;
-    background : #fff;
-    margin: 20px;
-    overflow: hidden;
-    border-radius: 20px;
-    border : 3px solid #a00000;
+@media (max-width: 760px) {
+  .slog {
+    width: 80%;
+    border-bottom: 5px solid #a00000;
+  }
 }
 
-@media (min-width:1025px){
-    .ndContCard:hover .ndCard{
-        filter: blur(5px);
-        transform: scale(0.9);
-        opacity: 0.7;
-    }
-    
-    .ndContCard .ndCard:hover{
-        filter: blur(0px);
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    
+.ndContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
 }
 
-.ndContCard:hover .ndCard{
+.ndContCard {
+  position: relative;
+  width: 1150px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ndContCard .ndCard {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  background: #fff;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 3px solid #a00000;
+}
+
+@media (min-width: 1025px) {
+  .ndContCard:hover .ndCard {
+    filter: blur(5px);
     transform: scale(0.9);
     opacity: 0.7;
-}
+  }
 
-.ndContCard .ndCard:hover{
+  .ndContCard .ndCard:hover {
+    filter: blur(0px);
     transform: scale(1.1);
     opacity: 1;
+  }
 }
 
-
-
-.ndContCard .ndCard .circle{
-    position : relative;
-    width: 100%;
-    height: 180px;
-    background : #000;
-    border-bottom-left-radius : 50%;
-    border-bottom-right-radius : 50%;
-    text-align: center;
-    background-position: center;
-    background-size: cover;
-    border-bottom: 1px solid #a00000;
+.ndContCard:hover .ndCard {
+  transform: scale(0.9);
+  opacity: 0.7;
 }
 
-
-.ndContCard .ndCard .circle h2{
-    color:#fff;
-    font-size: 4.5rem;
-    padding: 30px 0;
+.ndContCard .ndCard:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-.ndContCard .ndCard .content{
-    position: absolute;
-    bottom:10px;
-    text-align: center;
-    margin-bottom: 20px;
-    padding-left:10px;
-    padding-right: 10px;
+.ndContCard .ndCard .circle {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: #000;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 1px solid #a00000;
 }
 
-.ndContCard .ndCard .content a{
-    position: relative;
-    padding: 10px 20px;
-    background:#a00000;
-    color:#fff;
-    border-radius: 40px;
-    text-decoration: none;
+.ndContCard .ndCard .circle h2 {
+  color: #fff;
+  font-size: 4.5rem;
+  padding: 30px 0;
 }
 
-.ndClose{
-    width: 100%;
-    display: block;
+.ndContCard .ndCard .content {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-
-.ndImgClose{
-    float: right;
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
+.ndContCard .ndCard .content a {
+  position: relative;
+  padding: 10px 20px;
+  background: #a00000;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
 }
 
-.ndPModal{
-    font-size : 1.5rem;
+.ndClose {
+  width: 100%;
+  display: block;
 }
 
-.ndButtonArticle{
-    position: relative;
-    padding: 10px 20px;
-    background:#a00000;
-    color:#fff;
-    border-radius: 40px;
-    text-decoration: none;
-    outline-style:none;
+.ndImgClose {
+  float: right;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
 
-.ndButtonArticle:hover{
-    color:#fff;
-    transform: scale(1.1);
-}
-.ndFb{
-    position: absolute;
-    top : 50%;
-    left : 5px;
-    transform: translate(0,-50%);
+.ndPModal {
+  font-size: 1.5rem;
 }
 
-.modal-footer{
-    position: relative;
-    border-top: 1px solid rgba(160,0,0,0.5);
+.ndButtonArticle {
+  position: relative;
+  padding: 10px 20px;
+  background: #a00000;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  outline-style: none;
 }
 
-.modal-content{
-    border : 2px solid #a00000;
-    border-radius: 0.8rem;
-    height: 100%;
+.ndButtonArticle:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+.ndFb {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
 }
 
-.modal-header{
-    border-bottom: 1px solid rgba(160,0,0,0.5);
+.modal-footer {
+  position: relative;
+  border-top: 1px solid rgba(160, 0, 0, 0.5);
 }
 
-#ndCaractAnime{
-    height:60px;
-    font-size:1.5rem;
-}
-@media (min-width:1245px){
-    #ndCaractAnime{
-        height: 20px;
-    }
+.modal-content {
+  border: 2px solid #a00000;
+  border-radius: 0.8rem;
+  height: 100%;
 }
 
-.ndImgMod img{
-    border-radius: 50px;
-    padding-left: 5px;
-    padding-right: 5px;
+.modal-header {
+  border-bottom: 1px solid rgba(160, 0, 0, 0.5);
 }
 
-.nav-pills .nav-link.active{
-    background-color: #a00000;
+#ndCaractAnime {
+  height: 60px;
+  font-size: 1.5rem;
+}
+@media (min-width: 1245px) {
+  #ndCaractAnime {
+    height: 20px;
+  }
 }
 
-a{
-    color:#000;
+.ndImgMod img {
+  border-radius: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-a:hover{
-    color:#000;
-    transform: scale(1.05);
-}
-.ndButtonArticle:active {outline-style:none;}
-input{
-    border : none;
+.nav-pills .nav-link.active {
+  background-color: #a00000;
 }
 
-.ndContentModal{
-    height: 80%;
+a {
+  color: #000;
 }
 
-@media (min-width: 576px){
-    .ndModParam{
-        max-width: 700px;
-        height: 400px;
-    }
+a:hover {
+  color: #000;
+  transform: scale(1.05);
+}
+.ndButtonArticle:active {
+  outline-style: none;
+}
+input {
+  border: none;
 }
 
+.ndContentModal {
+  height: 80%;
+}
 
-.modal-footer .ndADeco{
-    position: relative;
-    padding: 10px 20px;
-    background:#333333;
-    color:#fff;
-    border-radius: 40px;
-    text-decoration: none;
-    outline-style:none;
-    margin-right: 15px;
+@media (min-width: 576px) {
+  .ndModParam {
+    max-width: 700px;
+    height: 400px;
+  }
+}
+
+.modal-footer .ndADeco {
+  position: relative;
+  padding: 10px 20px;
+  background: #333333;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  outline-style: none;
+  margin-right: 15px;
 }
 
 #myBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 9999;
-    font-size: 18px;
-    border: 5px solid #a00000;
-    outline: none;
-    background-color: #a00000;
-    color: #fff;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    background-image: url("../img/arrow.png");
-    background-position: center;    
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 50px;
-    height:50px;
-  }
-  
-  #myBtn:hover {
-    background-color: #a00000;
-  }
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 9999;
+  font-size: 18px;
+  border: 5px solid #a00000;
+  outline: none;
+  background-color: #a00000;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  background-image: url("../img/arrow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+#myBtn:hover {
+  background-color: #a00000;
+}
+#btngroup {
+
+  background-color: #a00000;
+  color: #fff;
+  border: #fff;
+  border-radius: 20px;
+ }
+#groupbtn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

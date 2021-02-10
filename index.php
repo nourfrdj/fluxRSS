@@ -65,6 +65,6 @@ $idmodal = 0;
 
   </div>
 </div>
-<input type="button" id="btnHaut" value="revenir" OnClick="window.location.href='#index'">
+
 <?php require("view/footer.php"); ?>
 
