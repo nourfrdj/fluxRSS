@@ -7,21 +7,24 @@
      padding: 0;
      box-sizing: border-box ;
  }
-
- 
-
+ body{
+    background-color: #333333;
+    color :#fff;
+}
  .ndNav{
      display: flex;
      text-align: center;
      justify-content: center;
      align-items: center;
      margin-top: 10px;
+     position: relative;
  }
 
  .ndColNav{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
  }
  #ndParam{
     position: absolute;
@@ -31,10 +34,10 @@
 
  #ndParam .ndButtonParam{
 
-
     width: 40px;
     transition: 0.5s;
 }
+
 
 #ndParam .ndButtonParam:hover{
     animation: animateRotateGear 2.5s linear infinite;
@@ -95,8 +98,35 @@
 
  .slog{
     width: 30%;
-     border-bottom: 5px solid #a00000;
+     position: relative;
  }
+
+ .slog::before,
+.slog::after{
+    content :'';
+    position : absolute;
+    bottom : 0;
+    left : 0;
+    width : 100%;
+    height: 7%;
+    background: linear-gradient(45deg, #ff0000, blue, green,yellow,#ff0000, blue, green,yellow,#920000);
+    background-size: 500%;
+    z-index: -1;
+    transform: scale(1.03);
+    animation: animate 50s infinite;
+    opacity: 0.5;
+}
+
+.slog::after{
+    filter: blur(20px);
+}
+
+@keyframes animate{
+    0% {background-position: 0 0 ;}
+    50% {background-position: 500% 0;}
+    100% {background-position: 0 0 ;}
+}
+
 
  .ndContent{
     display: flex;
@@ -104,7 +134,8 @@
     align-items: center;
     background-attachment: fixed;
  }
- 
+
+
 .ndContCard{
     position : relative;
     width: 1150px;
@@ -120,16 +151,38 @@
     position: relative;
     width: 300px;
     height: 420px;
-    background : #fff;
+    background : #333333;
     margin: 20px;
     overflow: hidden;
     border-radius: 20px;
-    border : 3px solid #a00000;     
+    border : 3px solid red;     
+    z-index:2;
 }
 
+.ndCard::before,
+.ndCard::after{
+    content :'';
+    position : absolute;
+    bottom : 0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0000, blue, green,yellow,#ff0000, blue, green,yellow,#920000);
+    background-size: 500%;
+    z-index: -1;
+    transform: scale(1.03);
+    animation: animate 50s infinite;
+    opacity: 0.5;
+}
+
+.ndCard::after{
+    filter: blur(20px);
+}
+
+
 .ndContCard:hover .ndCard{
-    filter: blur(5px);
-    transform: scale(0.9);
+    filter: blur(2px);
+    transform: scale(1);
     opacity: 0.7;
 }
 
@@ -151,7 +204,8 @@
     text-align: center;
     background-position: center;
     background-size: cover;
-    border-bottom: 1px solid #a00000;
+    border-bottom: 1px solid #303cc4;
+    z-index:2;
 }
 
 
@@ -166,12 +220,14 @@
     bottom:10px;
     text-align: center;
     margin-bottom: 20px;
+    z-index:2;
+    background : #333333;
 }
 
 .ndContCard .ndCard .content a{
     position: relative;
     padding: 10px 20px;
-    background:#a00000;
+    background:#303cc4;
     color:#fff;
     border-radius: 40px;
     text-decoration: none;
@@ -197,7 +253,7 @@
 .ndButtonArticle{
     position: relative;
     padding: 10px 20px;
-    background:#a00000;
+    background:#303cc4;
     color:#fff;
     border-radius: 40px;
     text-decoration: none;
@@ -216,16 +272,17 @@
 
 .modal-footer{
     position: relative;
-    border-top: 1px solid rgba(160,0,0,0.5);
+    border-top: 1px solid rgba(29, 0, 160, 0.5);
 }
 
 .modal-content{
-    border : 2px solid #a00000;
+    border : 2px solid #303cc4;
     border-radius: 0.8rem;
+    background-color: #333333;
 }
 
 .modal-header{
-    border-bottom: 1px solid rgba(160,0,0,0.5);
+    border-bottom: none;
 }
 
 #ndCaractAnime{

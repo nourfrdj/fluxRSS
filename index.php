@@ -1,11 +1,10 @@
 <?php SESSION_start() ?>
-<?php require("view/header.php");
+<?php 
+
 require("controllers/flux_controllers.php");
-if(isset($_COOKIE[''])){
-  $_SESSION['nbreacticlechoisi']=$_COOKIE['nbre_art'];
-  
-getArticles($_COOKIE['url'], $_SESSION['nbreacticlechoisi'] );
-var_dump($_COOKIE['url']);
+if(isset($_COOKIE)){
+  $_SESSION['nbreacticlechoisi']=$_COOKIE['nbre_art'];  
+  getArticles($_COOKIE['url'], $_SESSION['nbreacticlechoisi'] );
 }
 else
 {
@@ -14,7 +13,7 @@ else
   getArticles($url, $_SESSION['nbreacticlechoisi']);
  
 }
-
+require("view/header.php");
 $idmodal = 0;
 ?>
 <div class="ndContent">

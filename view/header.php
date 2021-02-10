@@ -1,5 +1,4 @@
   <?php if (isset($_POST['save'])) {
-    var_dump($_POST);
     setcookie('theme', $_POST['theme'], time() + 365 * 24 * 3600); //cookie pour 1 an
     switch ($_POST['cathegory']) {
       case 'cat_app_log':
@@ -44,11 +43,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/theme1.css">
+    <link rel="stylesheet" href="./assets/css/theme3.css">
     <title>Hello, world!</title>
   </head>
 
   <body>
+  
     <div class="ndNav">
       <div class="ndColNav">
 
@@ -57,7 +57,7 @@
         <a href="index.php"></a>
       </div>
       <div class="ndColNav" id="ndParam">
-        <a href="#idmodalparametre" data-bs-toggle="modal" data-bs-target="#idmodalparametre""><img class=" ndButtonParam" src="./assets/img/cog-solid.svg" /></a>
+        <img class=" ndButtonParam" src="./assets/img/cog-solid.svg" data-bs-toggle="modal" data-bs-target="#idmodalparametre"/>
       </div>
     </div>
     <div class="entete">
@@ -67,7 +67,7 @@
       </div>
     </div>
     <div id="idmodalparametre" class="modal" tabindex="-1">
-      <form method="post">
+      <form method="post" action="index.php">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header ">
@@ -109,9 +109,9 @@
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
                     <div class=""> <label>Le nombre d'article par page :</label>
-                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) == 'nbre_art_6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['cathegory']) == 'nbre_art_12' ? 'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['cathegory']) == 'nbre_art_all' ? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
+                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) == '6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) == '12' ? 'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['nbre_art']) == '29' ? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
                     </div>
                   </div>
                 </div>
