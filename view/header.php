@@ -122,9 +122,9 @@
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
                     <div class=""> <label>Le nombre d'article par page :</label>
-                      <p> <input type="radio" id="nbr_art_6" checked name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) == 'nbre_art_6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) == 'nbre_art_12' ?'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['nbre_art']) == 'nbre_art_all '? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
+                      <p> <input type="radio" id="nbr_art_6" checked name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) && $_COOKIE['nbre_art'] == 'nbre_art_6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) && $_COOKIE['nbre_art'] == 'nbre_art_12' ?'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?=isset($_COOKIE['nbre_art']) && $_COOKIE['nbre_art'] == 'nbre_art_all '? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
                     </div>
                   </div>
                 </div>
