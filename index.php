@@ -6,12 +6,8 @@ if(isset($_COOKIE)){
   $_SESSION['nbreacticlechoisi']=$_COOKIE['nbre_art'];  
   getArticles($_COOKIE['url'], $_SESSION['nbreacticlechoisi'] );
 }
-else
-{
-  $url="https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/";
-  $_SESSION['nbreacticlechoisi']=29;
-  getArticles($url, $_SESSION['nbreacticlechoisi']);
- 
+else{
+  
 }
 require("view/header.php");
 $idmodal = 0;
