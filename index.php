@@ -14,7 +14,7 @@ else{
 
 $idmodal = 0;
 ?>
-<div class="ndContent">
+<div id="index" class="ndContent" >
   <div class="ndContCard">
     <?php 
     for ($counter = 0; $counter < $_COOKIE['nbre_art']; $counter++) {
@@ -65,5 +65,6 @@ $idmodal = 0;
 
   </div>
 </div>
-
+<input type="button" id="btnHaut" value="revenir" OnClick="window.location.href='#index'">
 <?php require("view/footer.php"); ?>
+
