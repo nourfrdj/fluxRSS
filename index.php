@@ -1,4 +1,5 @@
-<?php SESSION_start() ?>
+<?php SESSION_start();
+ ?>
 <?php require("view/header.php");
 require("controllers/flux_controllers.php");
 if(isset($_COOKIE['nbre_art'])){

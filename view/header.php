@@ -1,5 +1,4 @@
   <?php if (isset($_POST['save'])) {
-    var_dump($_POST);
     setcookie('theme', $_POST['theme'], time() + 365 * 24 * 3600); //cookie pour 1 an
     switch ($_POST['cathegory']) {
       case 'cat_app_log':
@@ -28,8 +27,12 @@
       break;
       case 'nbre_art_all':setcookie('nbre_art',29,time() + 365 * 24 * 3600);
       break;
-      default : setcookie('nbre_art',29,time() + 365 * 24 * 3600);
+      
     }
+  }
+  else
+  {
+    
   }
   ?>
   <!doctype html>
@@ -109,16 +112,16 @@
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
                     <div class=""> <label>Le nombre d'article par page :</label>
-                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value= <?= isset($_COOKIE['nbre_art']) == 'nbre_art_6' ? 'checked' : '' ?>><label for="nbre_art_6">6 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value= <?= isset($_COOKIE['nbre_art']) == 'nbre_art_12' ? 'checked' : '' ?>><label for="nbre_art_12">12 articles</label></p>
-                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value= <?= isset($_COOKIE['nbre_art']) == 'nbre_art_all' ? 'checked' : '' ?>><label for="nbre_art_all">Tous les articles</label></p>
+                      <p> <input type="radio" id="nbr_art_6" selected name="nbre_art" value=6 ?><label for="nbre_art_6">6 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value= 12><label for="nbre_art_12">12 articles</label></p>
+                      <p> <input type="radio" id="nbre_art_all" name="nbre_art" value=29><label for="nbre_art_all">Tous les articles</label></p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" name="save" class="btn btn-primary"onclick="header('Location: index.php " >Enregistrer Vos preferances</button>
+                <button type="submit" name="save" value="save" class="btn btn-primary"onclick="header('Location: index.php " >Enregistrer Vos preferances</button>
               </div>
             </div>
           </div>
