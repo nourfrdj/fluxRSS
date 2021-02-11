@@ -338,9 +338,57 @@ input {
   border: #fff;
   border-radius: 20px;
  }
+ #btngroup:hover{
+   background: rgb(87, 1, 1);
+ }
+
 #groupbtn{
     margin-top: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.ndSpan {
+  margin-left: 10px;
+}
+
+#btngroup {
+
+  background-color: #fff;
+  color: #000;
+  border: #fff;
+  width : 20%;
+  
+ }
+
+#btngroup:hover{
+  background:rgb(87, 1, 1);
+  border-radius: 20px;
+  border: none;
+  color:#fff;
+}
+
+#groupbtn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#groupbtn form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.ndSpan {
+  margin-left: 10px;
+}
+
+@media (max-width:567px){
+  #btngroup{
+      font-size: 11px;
+  }
 }

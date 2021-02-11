@@ -339,3 +339,42 @@ input{
   #myBtn:hover {
     background-color: #303cc4;
   }
+
+  #btngroup {
+
+    background-color: #333333;
+    color: #fff;
+    border: #fff;
+    width : 20%;
+    
+   }
+
+  #btngroup:hover{
+    background:rgb(24, 0, 133);
+    border-radius: 20px;
+    border: none;
+  }
+
+  #groupbtn{
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
+
+  #groupbtn form{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+  }
+  
+  .ndSpan {
+    margin-left: 10px;
+}
+
+@media (max-width:567px){
+    #btngroup{
+        font-size: 11px;
+    }
+}

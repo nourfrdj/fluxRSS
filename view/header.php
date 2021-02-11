@@ -28,10 +28,10 @@
     }
     switch ($_POST['nbre_art']) {
       case 'nbre_art_6':
-        setcookie('nbre_art', 6, time() + 365 * 24 * 3600, "/");
+        setcookie('nbre_art', 5, time() + 365 * 24 * 3600, "/");
         break;
       case 'nbre_art_12':
-        setcookie('nbre_art', 12, time() + 365 * 24 * 3600, "/");
+        setcookie('nbre_art', 10, time() + 365 * 24 * 3600, "/");
         break;
       case 'nbre_art_all':
         setcookie('nbre_art', 29, time() + 365 * 24 * 3600, "/");
@@ -130,7 +130,7 @@
     </div>
     <div id="groupbtn" class="btn-group " role="group" aria-label="Basic outlined example">
       <form method="GET" action="index.php">
-        <button id="btngroup" type="btncatapp" name="btncatapp" class="btn btn-outline-primary">Applications et logiciels</button>
+        <button id="btngroup" type="btncatapp" name="btncatapp" class="btn btn-outline-primary">Applications</button>
         <button id="btngroup" type="btntech" name="btntech" class="btn btn-outline-primary">Technologie</button>
         <button id="btngroup" type="btnjeux" name="btnjeux" class="btn btn-outline-primary">Jeux</button>
         <button id="btngroup" type="btnsec" name="btnsec" class="btn btn-outline-primary">Sécurité</button>
@@ -180,8 +180,8 @@
                   <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 
                     <div class=""> <label style="margin-bottom:15px;"><strong>Le nombre d'article par page :</strong></label>
-                      <p> <input type="radio" id="nbr_art_6" checked name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "6" ? 'checked' : '' ?>><label for="nbre_art_6"><span class="ndSpan">6 articles</span></label></p>
-                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "12" ? 'checked' : '' ?>><label for="nbre_art_12"><span class="ndSpan">12 articles</span></label></p>
+                      <p> <input type="radio" id="nbr_art_6" checked name="nbre_art" value="nbre_art_6" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "5" ? 'checked' : '' ?>><label for="nbre_art_6"><span class="ndSpan">5 articles</span></label></p>
+                      <p> <input type="radio" id="nbre_art_12" name="nbre_art" value="nbre_art_12" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "10" ? 'checked' : '' ?>><label for="nbre_art_12"><span class="ndSpan">10 articles</span></label></p>
                       <p> <input type="radio" id="nbre_art_all" name="nbre_art" value="nbre_art_all" <?= isset($_COOKIE['nbre_art']) && $_COOKIE["nbre_art"] == "29" ? 'checked' : '' ?>><label for="nbre_art_all"><span class="ndSpan">Tous les articles</span></label></p>
                     </div>
                   </div>
